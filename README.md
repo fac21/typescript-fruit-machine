@@ -2,7 +2,7 @@
 
 🍌 🍍 🍎 🍇 🍑 🥝
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and inspired by the Fruit Machine pairing exercise from (https://github.com/101-Ways/pairing-tests/tree/master/fruit-machine)[https://github.com/101-Ways/pairing-tests/tree/master/fruit-machine].
 
 ## Team
 
