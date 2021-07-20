@@ -10,6 +10,7 @@ export function FruitMachine() {
   const [slot4, setSlot4] = React.useState("");
   const [winner, setWinner] = React.useState(false);
   const [clicks, setClicks] = React.useState(0);
+  const [money, setMoney] = React.useState("0");
 
   function checkForWin() {
     if (slot1.length > 0) {
@@ -37,6 +38,7 @@ export function FruitMachine() {
     setSlot4(getRandomColour(colours));
     checkForWin();
     setClicks(clicks + 1);
+    setMoney((parseInt(money) - 1).toString());
     console.log(slot1, slot2, slot3, slot4, winner);
     console.log("winner?", winner);
   }
@@ -53,14 +55,26 @@ export function FruitMachine() {
         <Slot slotColour={slot3} />
         <Slot slotColour={slot4} />
       </div>
-
       {clicks > 0 && !winner ? <p>Try again?</p> : ""}
-
       {winner ? (
         <p>You've won!!</p>
       ) : (
         <button onClick={handleClick}>Play!</button>
       )}
+      <p>Player money: £{money}</p>
+      <form>
+        <label htmlFor='money'>Enter your total money:</label>
+        <input
+          type='number'
+          id='money'
+          min='0'
+          onChange={(event) =>
+            setMoney(
+              (parseInt(money) + parseInt(event.target.value)).toString()
+            )
+          }
+        />
+      </form>
     </>
   );
 }

@@ -7,6 +7,7 @@ function App() {
   return (
     <div className='App'>
       <h1>Fruit Machine</h1>
+      <p>Play: £1.00</p>
       <FruitMachine />
     </div>
   );
